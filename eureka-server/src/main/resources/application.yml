@@ -1,0 +1,31 @@
+
+## 服务名, 区别各服务
+spring:
+  application:
+    name: eureka-server
+
+##管理界面账号密码
+##如不设置, 进入管理解密无需账号密码, 且客户端连接URL 无需拼接账号密码
+security:
+   basic:
+     enabled: true
+   user:
+     name: pqd
+     password: pqd
+
+server:
+  port: 8201
+
+eureka:
+  client:
+    ## 设置为false表示不向注册中心注册自己, eureka就为注册中心
+    register-with-eureka: false
+    ## 设置为false表示不需要去检索服务, 注册中心职责就是维护服务实例
+    fetch-registry: false
+
+  server:
+    ## 关闭自我保护
+    enable-self-preservation: false
+    ## 清理失效连接间隔
+    eviction-interval-timer-in-ms: 5000
+

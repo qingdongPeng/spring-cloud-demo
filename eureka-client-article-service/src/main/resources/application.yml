@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-client-article-service
+server:
+  port: 8203
+
+eureka:
+  client:
+    service-url:
+      ## 为Eureka服务地址, 启动时要将自身信息注册到Eureka中
+      ## 为defaultZone, 不是default-zone
+      ## 如果eureka没进行安全认证, 则无需拼接账号密码
+      ## defaultZone: http://localhost:8201/eureka/
+      defaultZone: http://pqd:pqd@localhost:8201/eureka/
+
+  ## 开启健康检查
+  healthcheck:
+    enabled: true
+
+  instance:
+    ## 为client发送给server端的频率
+    lease-expiration-duration-in-seconds: 5
+    ## 为server至上一次收到client心跳之后, 等待下一次心跳的超时时间, 在这个时间内若没收到下一次心跳, 则移除该instance
+    lease-renewal-interval-in-seconds: 5
