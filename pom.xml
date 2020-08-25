@@ -14,6 +14,7 @@
         <module>eureka-client-article-service</module>
         <module>ribbon-native-demo</module>
         <module>feign-native-demo</module>
+        <module>hystrix</module>
     </modules>
 
 

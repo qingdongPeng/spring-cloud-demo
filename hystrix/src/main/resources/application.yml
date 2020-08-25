@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: eureka-hystrix-service
+
+server:
+  port: 8207
+
+eureka:
+  client:
+    service-url:
+      ## 为Eureka服务地址, 启动时要将自身信息注册到Eureka中
+      ## 为defaultZone, 不是default-zone
+      ## 如果eureka没进行安全认证, 则无需拼接账号密码
+      ## defaultZone: http://localhost:8201/eureka/
+      defaultZone: http://pqd:pqd@localhost:8201/eureka/
+
+## feign默认关闭了对Hystrix的支持, 需要手动配置
+feign:
+  hystrix:
+    enabled: true
